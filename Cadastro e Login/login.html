@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="shortcut icon" href="../Assets/SMF-Icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../Style/style.css">
+</head>
+<style>
+    html{background-image: url('../Assets/Design\ sem\ nome.png');}
+</style>
+<body class="body-cadastro">
+    <header>
+    <div class="container">
+             <div class="logo-header">
+                 <a href="../Home/home.html"><img src="../Assets/getTeamLogos.png" alt=""></a>
+             </div>
+        <div class="navbar">
+            <ul>
+                <li> <a href="home.html">Home</a></li>
+                <li> <a href="elenco.html">Elenco</a></li>
+                <li> <a href="">Quiz </a> </li>
+                <li> <a href="">Sala de Troféus</a></li>
+                <a href="../Cadastro e Login/cadastro.html"><button class="button-login">Cadastro</button></a>
+                <a href="../Cadastro e Login/login.html"><button class="button-login">Login</button></a>
+            </ul>
+        </div>
+    </div>
+</header>
+    <div class="caixa-login">
+        <h2>Login</h2>
+    
+        <div class="filhol_login">
+            <p class="subtitulo">Digite seu email:</p>
+            <input id="input_email_or_cnpj" type="text" placeholder="Email@gmail.com" class="input input"> <br> <br>
+
+            <p class="subtitulo">Digite sua senha:</p> 
+            <input id="input_senha" type="password" placeholder="********" class="input input"> <br> <br>
+            <p class="link"><a href="">Lembrar de mim</a></p>
+            <p class="link"><a href="">Esqueci minha senha</a></p>
+            <button onclick="entrar()" class="button-lc">Entrar</button> <br>
+            <p class="link">Novo por aqui? &nbsp <a href="cadastro.html"> Crie uma conta</a></p>
+        </div>
+
+    </div>
+</body>
+<footer>
+    <p>Contato (SMF@OUTLOOK.COM, 1194111-1106(WhatsApp)).</p>
+    <p>Rua Haddock Lobo, 595 - São Paulo / SP</p>
+    <p>© 2025 SMF. Todos os direitos reservados.</p>
+</footer>
+</html>
+<script>
+    function entrar(){
+        var login = input_email_or_cnpj.value
+        var senha = input_senha.value
+        var mensagem = `Algo está errado nos campos: \n`;
+
+        if (login != 'corinthians@corinthians.com') {
+            mensagem += 'Campo de Login Incorreto! \n'
+        } if (senha != 'coringao') {
+            mensagem += 'Campo de Senha Incorreto! \n'
+        }
+
+        if(mensagem == 'Algo está errado nos campos: \n'){
+            window.location.href = '../home/home.html'
+        } else {
+            alert(mensagem)
+        }
+        
+        if (login == 'corinthians@corinthians.com' && senha == 'coringao') {
+            window.location.href = '../Dash/dashboard.html'
+        }
+    }
+</script>
