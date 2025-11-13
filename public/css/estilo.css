@@ -1,10 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+
+html {    
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: "Montserrat", sans-serif;
-  background-color: black;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    height: 100%;
 }
 
 :root {
@@ -23,6 +30,7 @@ body {
 .header {
   height: var(--tamanho-header);
   border-bottom: 2px solid #a29160;
+  background-color: rgba(0, 0, 0, 0.508);
 }
 
 .header .container {
@@ -49,6 +57,12 @@ body {
   color: #a29160;
 }
 
+.navbar li:hover{
+  transition: 200ms;
+  scale: 1.05;
+  font-weight: 500;
+}
+
 .titulo {
   color: #a29160;
   width: fit-content;
@@ -61,23 +75,44 @@ body {
 
 .icon {
 display: flex;
-width: 6vw;
-height: 12vh;
+width: auto;
+height: 10vh;
 }
 
 /* BANNER */
 
 .banner {
-  height: 100vh;
-  color: white;
-  background-image: url('../assets/imgs/Design\ sem\ nome.png');
-  background-size: cover;
+  height: 80vh;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  color: rgba(0, 0, 0, 0.701);
+  background-size: cover
 }
 
 .banner .container {
+  margin-top: 50px;
+  margin-left:70px;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 70vh;
+  width: 50vw;
+  background-color: rgba(0, 0, 0, 0.85);
+	padding: 40px;
+	border-radius: 10px;
+	box-shadow: 0 0 20px rgba(162, 145, 96, 0.3); 
+	margin: 20px 20px 20px 20px;
+	color: #e0e0e0;
+	border: 2px solid #a29160;
+}
+
+.imgbanner{
+  display: flex;
+  border-radius: 10px;
+  width: 40vw;
+  border: solid;
+  border-color: #a29160;
+  height: auto;
 }
 
 .banner .container p {
@@ -87,15 +122,46 @@ height: 12vh;
   font-size: 36px;
 }
 
+.banner p{
+  width: 50vw;
+  padding: 10px, 10px, 10px,10px;
+  font-size: 50px;
+  color: #a29160;
+  filter: brightness(20px);
+}
+
+.frase{
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  margin-top: 25vh;
+  width: 50%;
+}
+
 .banner .container span {
   font-weight: 800;
 }
 
 /* MISSÃO VISÃO VALORES */
+.boxx{
+  display: flex;
+  justify-content: center;
+}
+
 
 .social {
-  background-color: #e5e5e5;
+  background-color: rgba(0, 0, 0, 0.85);
   display: flex;
+  box-shadow: 0 0 20px rgba(162, 145, 96, 0.3); 
+  justify-content: center;
+  border-radius: 10px;
+  border: solid;
+  border-color: #a29160;
+  width: 90vw;
+  height: 100vh;
+  color: #e0e0e0;
+  margin-top: 50px;
 }
 
 .social .container {
@@ -131,6 +197,7 @@ height: 12vh;
   color: #fff;
   display: flex;
   font-size: 15px;
+  margin-top: 40px;
 }
 
 .footer .container {
@@ -138,15 +205,11 @@ height: 12vh;
   text-align: center;
 }
 
-.footer .container .version {
-  font-size: 12px;
-}
 
 /* LOGIN */
 
 .login {
   height: var(--tamanho-login);
-  background-image: url('../assets/imgs/Design\ sem\ nome.png');
   background-size: cover;
 }
 
@@ -158,12 +221,15 @@ height: 12vh;
 
 .card {
   width: 50%;
-  background-color: #e5e5e5;
+  background-color: rgba(0, 0, 0, 0.85);
+  box-shadow: 0 0 20px rgba(162, 145, 96, 0.3);
+  border: solid;
+  border-color: #a29160;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  color: palevioletred;
+  color: #a29160;
   flex-direction: column;
   height: fit-content;
   padding: 20px 0;
@@ -189,6 +255,8 @@ height: 12vh;
 
 .formulario input {
   border: 2px solid #a29160;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #e0e0e0;
   text-align: center;
   border-radius: 10px;
   margin: 0;
@@ -213,17 +281,25 @@ height: 12vh;
 
 .botao {
   cursor: pointer;
-  font-family: "Barlow", sans-serif;
   border: 0;
   border-radius: 5px;
   font-weight: 600;
   font-size: 18px;
   color: #fff;
-  background-color: #ED145B;
+  background-color: #a29160;
   width: 120px;
   height: 30px;
   align-self: center;
   margin-top: 20px;
+  transition: 200ms;
+}
+
+.botao:hover {
+  transition: 200ms;
+  font-weight: 650;
+  scale: 1.05;
+  cursor: pointer;
+  background-color: #a29160;
 }
 
 .loading-div {
@@ -283,7 +359,6 @@ input {
 }
 
 .btn {
-  font-family: "Barlow", sans-serif;
   border: 0;
   border-radius: 5px;
   font-weight: 600;
@@ -307,17 +382,72 @@ input {
   width: 50px;
 }
 
-/* SIMULADOR */
+/* HISTORIA */
 
-.simulador {
-  color: white;
+.divhistoria {
+	padding: 60px 0;
+	min-height: calc(100vh - var(--tamanho-header) - var(--tamanho-footer));
 }
 
-.simulador .container {
-  flex-direction: column;
-  overflow: scroll; 
-  height: var(--tamanho-simulador);
+.divhistoria .container {
+	flex-direction: column;
+	height: auto; 
+	width: 90%; 
 }
+
+.historia {
+	background-color: rgba(0, 0, 0, 0.85);
+	padding: 40px;
+	border-radius: 10px;
+	box-shadow: 0 0 20px rgba(162, 145, 96, 0.3);
+	max-width: 1000px; 
+	margin: 0 auto;
+	color: #e0e0e0;
+	border: 2px solid #a29160;
+}
+
+.historia h1 {
+	color: #a29160;
+	text-align: center;
+	font-size: 2.5em;
+	font-weight: 700;
+	margin-bottom: 30px;
+	padding-bottom: 15px;
+	text-transform: uppercase;
+	border-bottom: 3px solid #a29160;
+}
+
+.historia h2 {
+	color: #fff;
+	font-size: 1.8em;
+	font-weight: 600;
+	margin-top: 40px;
+	margin-bottom: 15px;
+}
+
+.historia h3 {
+	color: #a29160;
+	font-size: 1.4em;
+	font-weight: 500;
+	margin-top: 30px;
+	margin-bottom: 15px;
+}
+
+.historia p {
+	color: #e0e0e0; 
+	line-height: 1.7;
+	margin-bottom: 20px;
+	text-align: justify;
+	font-size: 1.05em;
+}
+
+.historia p strong,
+.historia ul li strong {
+	color: #a29160;
+	font-weight: 700;
+}
+
+
 
 /* ALERTA */
 
