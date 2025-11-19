@@ -105,8 +105,6 @@ height: 10vh;
 }
 
 .banner .container {
-  margin-top: 50px;
-  margin-left:70px;
   justify-content: center;
   align-items: center;
   height: 70vh;

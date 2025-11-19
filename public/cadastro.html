@@ -18,7 +18,7 @@
     html{background-image: url('.//assets/imgs/Design\ sem\ nome.png');}
 </style>
 
-<body onload="listar()">
+<body>
   <!--header inicio-->
   <div class="header">
       <div class="container">
@@ -76,8 +76,8 @@
           </div>
           <div class="campo">
             <span>Escolha seu Jodagor Prederido:</span>
-            <select name="" id="">
-              <option selected disabled>Selecione uma opção</option>
+            <select name="" id="select_jogador">
+              <option selected disabled value="#">Selecione uma opção</option>
               <option>Hugo Souza</option>
               <option>Donelli</option>
               <option>Matheus Bidu</option>
@@ -126,7 +126,7 @@
 <script>
 
   // Array para armazenar empresas cadastradas para validação de código de ativação 
-  let listaEmpresasCadastradas = [];
+  // let listaEmpresasCadastradas = [];
 
   function cadastrar() {
     // aguardar();
@@ -137,8 +137,7 @@
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    var codigoVar = codigo_input.value;
-    var idEmpresaVincular
+    var jogadorVar = select_jogador.value
 
     // Verificando se há algum campo em branco
     if (
@@ -146,7 +145,7 @@
       emailVar == "" ||
       senhaVar == "" ||
       confirmacaoSenhaVar == "" ||
-      codigoVar == ""
+      jogadorVar == "#"
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
@@ -158,18 +157,18 @@
       setInterval(sumirMensagem, 5000);
     }
 
-    // Verificando se o código de ativação é de alguma empresa cadastrada
-    for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
-      if (listaEmpresasCadastradas[i].codigo_ativacao == codigoVar) {
-        idEmpresaVincular = listaEmpresasCadastradas[i].id
-        console.log("Código de ativação válido.");
-        break;
-      } else {
-        cardErro.style.display = "block";
-        mensagem_erro.innerHTML = "(Mensagem de erro para código inválido)";
-        finalizarAguardar();
-      }
-    }
+    // // Verificando se o código de ativação é de alguma empresa cadastrada
+    // for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
+    //   if (listaEmpresasCadastradas[i].codigo_ativacao == codigoVar) {
+    //     idEmpresaVincular = listaEmpresasCadastradas[i].id
+    //     console.log("Código de ativação válido.");
+    //     break;
+    //   } else {
+    //     cardErro.style.display = "block";
+    //     mensagem_erro.innerHTML = "(Mensagem de erro para código inválido)";
+    //     finalizarAguardar();
+    //   }
+    // }
 
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
@@ -180,10 +179,10 @@
       body: JSON.stringify({
         // crie um atributo que recebe o valor recuperado aqui
         // Agora vá para o arquivo routes/usuario.js
-        nomeServer: nomeVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
-        idEmpresaVincularServer: idEmpresaVincular
+        nomeServer: nomeVar,
+        jogadorServer: jogadorVar
       }),
     })
       .then(function (resposta) {
@@ -211,26 +210,6 @@
       });
 
     return false;
-  }
-
-  // Listando empresas cadastradas 
-  function listar() {
-    fetch("/empresas/listar", {
-      method: "GET",
-    })
-      .then(function (resposta) {
-        resposta.json().then((empresas) => {
-          empresas.forEach((empresa) => {
-            listaEmpresasCadastradas.push(empresa);
-
-            console.log("listaEmpresasCadastradas")
-            console.log(listaEmpresasCadastradas[0].codigo_ativacao)
-          });
-        });
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-      });
   }
 
   function sumirMensagem() {

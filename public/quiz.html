@@ -11,36 +11,39 @@
 
 </head>
 <style>
-    html{background-image: url('.//assets/imgs/Design\ sem\ nome.png');}
+    html {
+        background-image: url('.//assets/imgs/Design\ sem\ nome.png');
+    }
 </style>
+
 <body onload="onloadEsconder()">
     <div class="header">
-      <div class="container">
-        <a href="index.html"><img class="icon" src="./assets/icon/241530841.png" alt=""></a>
-        <ul class="navbar">
-          <li>
-            <a href="index.html">Inicial</a>
-          </li>
-          <li>
-            <a href="historia.html">História</a>
-          </li>
-          <li>
-            <a href="trofeus.html">Sala de Troféus</a>
-          </li>
-          <li class="agora">
-            <a href="#">Quiz</a>
-          </li>
-          <li>|</li>
-          <li>
-            <a href="login.html">Login</a>
-          </li>
-          <li>
-            <a href="cadastro.html">Cadastro</a>
-          </li>
-        </ul>
-      </div>
+        <div class="container">
+            <a href="index.html"><img class="icon" src="./assets/icon/241530841.png" alt=""></a>
+            <ul class="navbar">
+                <li>
+                    <a href="index.html">Inicial</a>
+                </li>
+                <li>
+                    <a href="historia.html">História</a>
+                </li>
+                <li>
+                    <a href="trofeus.html">Sala de Troféus</a>
+                </li>
+                <li class="agora">
+                    <a href="#">Quiz</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="login.html">Login</a>
+                </li>
+                <li>
+                    <a href="cadastro.html">Cadastro</a>
+                </li>
+            </ul>
+        </div>
     </div>
-    
+
     <div id="pontuacaoEJogo">
         <button id="btnIniciarQuiz" onclick="iniciarQuiz()">INICIAR QUIZ</button>
 
@@ -116,20 +119,20 @@
         },
 
         {
-            pergunta: "Quantas horas tem em um dia?",
-            alternativaA: "30 horas",
-            alternativaB: "38 horas",
-            alternativaC: "48 horas",
-            alternativaD: "24 horas",
-            alternativaCorreta: "alternativaD"
+            pergunta: "Quantos títulos do Campeonatos Brasileiro o Corinthains tem?",
+            alternativaA: "8 títulos",
+            alternativaB: "10 títulos",
+            alternativaC: "7 títulos",
+            alternativaD: "9 títulos",
+            alternativaCorreta: "alternativaC"
         },
 
         {
-            pergunta: "Qual destes números é ímpar?",
-            alternativaA: "Dez",
-            alternativaB: "Doze",
-            alternativaC: "Oito",
-            alternativaD: "Onze",
+            pergunta: "Quem é o maior artilheiro do Corinthians?",
+            alternativaA: "Yuri Alberto",
+            alternativaB: "Romero",
+            alternativaC: "Cássio",
+            alternativaD: "Cláudio",
             alternativaCorreta: "alternativaD"
         },
         {
@@ -139,6 +142,54 @@
             alternativaC: "2003 e 2015",
             alternativaD: "2005 e 2015",
             alternativaCorreta: "alternativaB"
+        },
+        {
+            pergunta: "Qual Jogador mais vezes vestiu a camisa do Corinthians?",
+            alternativaA: "Wladimir",
+            alternativaB: "Cassio",
+            alternativaC: "Sócrates",
+            alternativaD: "Rivellino",
+            alternativaCorreta: "alternativaA"
+        },
+        {
+            pergunta: "Quanto tempo durou o maior jejum de titulos da história do Corinthians?",
+            alternativaA: "5 Anos",
+            alternativaB: "20 Anos",
+            alternativaC: "23 Anos",
+            alternativaD: "19 Anos",
+            alternativaCorreta: "alternativaC"
+        },
+        {
+            pergunta: "Quem marcou o gol do título da libertadores de 2012?",
+            alternativaA: "Paulinho",
+            alternativaB: "Emerson Sheik",
+            alternativaC: "Danilo",
+            alternativaD: "Paolo Guerreiro",
+            alternativaCorreta: "alternativaB"
+        },
+        {
+            pergunta: "Qual jogador é conhecido como “Pé de Anjo”?",
+            alternativaA: "Cássio",
+            alternativaB: "Renato Augusto",
+            alternativaC: "Jadson",
+            alternativaD: "Marcelinho Carioca",
+            alternativaCorreta: "alternativaD"
+        },
+        {
+            pergunta: "Em que ano a Neo Química Arena foi inaugurada?",
+            alternativaA: "2014",
+            alternativaB: "2012",
+            alternativaC: "2010",
+            alternativaD: "2018",
+            alternativaCorreta: "alternativaA"
+        },
+        {
+            pergunta: "Qual movimento marcou a luta por liberdade dentro do Corinthians nos anos 80?",
+            alternativaA: "Democracia Corinthiana",
+            alternativaB: "Era Tite",
+            alternativaC: "Movimento Alvinegro",
+            alternativaD: "Invasão do Rio de Janeiro",
+            alternativaCorreta: "alternativaA"
         }
 
 
@@ -311,14 +362,14 @@
             classComCoresParaMensagemFinal = "text-success-with-bg"
         }
 
-        textoParaMensagemFinal += "<br> Você acertou " + Math.round((porcentagemFinalDeAcertos)*100) + "% das questões."
+        textoParaMensagemFinal += "<br> Você acertou " + Math.round((porcentagemFinalDeAcertos) * 100) + "% das questões."
 
 
         document.getElementById('msgFinal').innerHTML = textoParaMensagemFinal
-        document.getElementById('msgFinal').classList.add(classComCoresParaMensagemFinal) 
+        document.getElementById('msgFinal').classList.add(classComCoresParaMensagemFinal)
         document.getElementById('spanPontuacaoFinal').innerHTML = pontuacaoFinal
 
-        document.getElementById('jogo').classList.add("text-new-gray") 
+        document.getElementById('jogo').classList.add("text-new-gray")
 
         btnProx.disabled = true
         btnSubmeter.disabled = true
