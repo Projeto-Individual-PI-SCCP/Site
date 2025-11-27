@@ -25,16 +25,6 @@
         background-image: url('../assets/imgs/Design\ sem\ nome.png')
     }
 
-    .kpiBox {
-        background: #000000aa;
-        color: white;
-        padding: 15px;
-        margin: 10px;
-        border-radius: 10px;
-        text-align: center;
-        font-size: 18px;
-        font-weight: bold;
-    }
 </style>
 
 <body>
@@ -62,60 +52,82 @@
         <div class="dash">
             <div id="alerta"></div>
 
-            <h2 style="color:white; margin-left:20px;">KPI's</h2>
-            <div style="display:flex; gap:20px; margin:20px;">
+            <h2>KPI's</h2>
+            <div class="kpis">
                 <div class="kpiBox">Jogador Mais Votado: <span id="kpiJogador">--</span></div>
+                <div class="kpiBox">Média de Pontuação do Quiz: <span id="kpiQuiz">--</span></div>
             </div>
+
             <div class="grafico">
                 <div class="div_unidade">
-                    <h2 style="color:white; margin-top:40px;">Jogadores Favoritos</h2>
+                    <h2>Jogadores Favoritos</h2>
                     <div class="graph">
                         <canvas id="graficoJogadores"></canvas>
                     </div>
                 </div>
-
-
-                
             </div>
         </div>
-    </div>
     </div>
 </body>
 
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
-    async function carregarKPIs() {
-        const j = await fetch('/jogador/favorito').then(r => r.json());
-
-        document.getElementById('kpiJogador').innerText = j.jogadorPreferido;
+    function carregarKPIs() {
+        fetch('/jogador/favorito')
+            .then(resposta => resposta.json())
+            .then(dados => {
+                document.getElementById('kpiJogador').innerText = dados.jogadorPreferido;
+            })
+            .catch(erro => {
+                console.error('Erro ao carregar KPIs:', erro);
+            });
     }
 
-    async function graficoJogadores() {
-        const dados = await fetch('/jogador/favorito').then(r => r.json());
+        function carregarQuiz() {
+        fetch('/kpiquiz/media')
+            .then(resposta => resposta.json())
+            .then(dados => {
+                document.getElementById('kpiQuiz').innerText = dados.mediaAcertos;
+            })
+            .catch(erro => {
+                console.error('Erro ao carregar KPIs:', erro);
+            });
+    }
 
-        new Chart(document.getElementById('graficoJogadores'), {
-            type: 'pie',
-            data: {
-                labels: dados.graficoPizza.labels,
-                datasets: [{
-                    data: dados.graficoPizza.data,
-                    backgroundColor: ['#a29160', '#fff', '#000', '#bf2c2c']
-                }]
-            },
-            options: {
-                plugins: {
-                    legend: {
-                        labels: {
-                            color: 'white'
+    function graficoJogadores() {
+        fetch('/jogador/favorito')
+            .then(resposta => resposta.json())
+            .then(dados => {
+                const dadosGrafico = dados.graficoPizza;
+
+                new Chart(document.getElementById('graficoJogadores'), {
+                    type: 'pie',
+                    data: {
+                        labels: dadosGrafico.labels,
+                        datasets: [{
+                            data: dadosGrafico.data,
+                            backgroundColor: ['#a29160', '#fff', '#000', '#bf2c2c', '#C8B273', '#1A1A1A']
+                        }]
+                    },
+                    options: {
+                        plugins: {
+                            legend: {
+                                labels: {
+                                    color: 'white'
+                                }
+                            }
                         }
                     }
-                }
-            }
-        });
+                });
+            })
+            .catch(erro => {
+                console.error('Erro ao carregar dados do gráfico:', erro);
+            });
     }
 
     carregarKPIs();
+    carregarQuiz();
     graficoJogadores();
 </script>
 

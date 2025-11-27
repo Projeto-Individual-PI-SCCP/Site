@@ -14,39 +14,28 @@
   <link rel="icon" href="./assets/icon/241530841.png" />
   <link rel="preconnect" href="https://fonts.gstatic.com" />
 </head>
+
 <style>
-    html{background-image: url('.//assets/imgs/Design\ sem\ nome.png');}
+  html {
+    background-image: url('./assets/imgs/Design sem nome.png');
+  }
 </style>
 
 <body>
-  <!--header inicio-->
   <div class="header">
-      <div class="container">
-        <a href="index.html"><img class="icon" src="./assets/icon/241530841.png" alt=""></a>
-        <ul class="navbar">
-          <li>
-            <a href="index.html">Inicial</a>
-          </li>
-          <li>
-            <a href="historia.html">História</a>
-          </li>
-          <li>
-            <a href="trofeus.html">Sala de Troféus</a>
-          </li>
-          <li>
-            <a href="quiz.html">Quiz</a>
-          </li>
-          <li>|</li>
-          <li>
-            <a href="login.html">Login</a>
-          </li>
-          <li class="agora">
-            <a href="cadastro.html">Cadastro</a>
-          </li>
-        </ul>
-      </div>
+    <div class="container">
+      <a href="index.html"><img class="icon" src="./assets/icon/241530841.png" alt=""></a>
+      <ul class="navbar">
+        <li><a href="index.html">Inicial</a></li>
+        <li><a href="historia.html">História</a></li>
+        <li><a href="trofeus.html">Sala de Troféus</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li>|</li>
+        <li><a href="login.html">Login</a></li>
+        <li class="agora"><a href="cadastro.html">Cadastro</a></li>
+      </ul>
     </div>
-  <!--header fim-->
+  </div>
 
   <div class="login">
     <div class="alerta_erro">
@@ -54,29 +43,44 @@
         <span id="mensagem_erro"></span>
       </div>
     </div>
+
     <div class="container">
       <div class="card card-cadastro">
         <h2>Bem-vindo!</h2>
+
         <div class="formulario">
+
           <div class="campo">
             <span>Nome:</span>
             <input id="nome_input" type="text" placeholder="Seu nome" />
           </div>
+
           <div class="campo">
             <span>E-mail:</span>
             <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
           </div>
+
+          <!-- SENHA + VALIDACAO ORIGINAL -->
           <div class="campo">
             <span>Senha:</span>
-            <input id="senha_input" type="password" placeholder="******" />
+            <input id="senha_input" type="password" placeholder="******" oninput="validarSenha()">
           </div>
+
+          <p>
+            <span id="span_tamanho" style="color: gray;">Deve conter mais de 8 caracteres</span><br>
+            <span id="span_num" style="color: gray;">Utilize números</span><br>
+            <span id="span_caracEsp" style="color: gray;">Utilize caracteres especiais</span><br>
+            <span id="span_caracESP" style="color: gray; font-size: 12px;">Ex: ! % * . & # $</span>
+          </p>
+
           <div class="campo">
             <span>Confirmação da Senha:</span>
             <input id="confirmacao_senha_input" type="password" placeholder="******" />
           </div>
+
           <div class="campo">
-            <span>Escolha seu Jodagor Prederido:</span>
-            <select name="" id="select_jogador">
+            <span>Escolha seu Jogador Preferido:</span>
+            <select id="select_jogador">
               <option selected disabled value="#">Selecione uma opção</option>
               <option>Hugo Souza</option>
               <option>Donelli</option>
@@ -102,44 +106,85 @@
           </div>
 
           <button class="botao" onclick="cadastrar()">Cadastrar</button>
+
         </div>
+
         <div id="div_aguardar" class="loading-div">
           <img src="./assets/circle-loading.gif" id="loading-gif" />
         </div>
 
-        <div id="div_erros_login"></div>
       </div>
     </div>
   </div>
 
-  <!--footer inicio-->
-    <div class="footer">
-      <div class="container">
-        <h4>Guilherme Ornaghi &copy; 2025</h4>
-      </div>
+  <div class="footer">
+    <div class="container">
+      <h4>Guilherme Ornaghi &copy; 2025</h4>
     </div>
-  <!--footer fim-->
+  </div>
+
 </body>
 
 </html>
 
 <script>
 
-  // Array para armazenar empresas cadastradas para validação de código de ativação 
-  // let listaEmpresasCadastradas = [];
+  var senhaValida = false;
+
+  function validarSenha() {
+    senha = senha_input.value;
+
+    var veriTam = false;
+    var veriNum = false;
+    var veriCarc = false;
+
+    // tamanho
+    if (senha.length >= 8) {
+      span_tamanho.style.color = "green";
+      veriTam = true;
+    } else {
+      span_tamanho.style.color = "red";
+      veriTam = false;
+    }
+
+    if (senha.includes(0) || senha.includes(1) || senha.includes(2) || senha.includes(3) ||
+      senha.includes(4) || senha.includes(5) || senha.includes(6) ||
+      senha.includes(7) || senha.includes(8) || senha.includes(9)) {
+
+      span_num.style.color = "green";
+      veriNum = true;
+
+    } else {
+      span_num.style.color = "red";
+      veriNum = false;
+    }
+
+    if (senha.includes('!') || senha.includes('%') || senha.includes('*') || senha.includes('.') ||
+      senha.includes('&') || senha.includes('#') || senha.includes('$')) {
+
+      span_caracEsp.style.color = "green";
+      veriCarc = true;
+
+    } else {
+      span_caracEsp.style.color = "red";
+      veriCarc = false;
+    }
+
+    if (veriTam == false || veriNum == false || veriCarc == false) {
+      senhaValida = false;
+    } else {
+      senhaValida = true;
+    }
+  }
+
 
   function cadastrar() {
-    // aguardar();
-
-    //Recupere o valor da nova input pelo nome do id
-    // Agora vá para o método fetch logo abaixo
     var nomeVar = nome_input.value;
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    var jogadorVar = select_jogador.value
+    var jogadorVar = select_jogador.value;
 
-    // Verificando se há algum campo em branco
     if (
       nomeVar == "" ||
       emailVar == "" ||
@@ -148,24 +193,28 @@
       jogadorVar == "#"
     ) {
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco)";
-
-      finalizarAguardar();
+      mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
       return false;
-    } else {
-      setInterval(sumirMensagem, 5000);
     }
 
-    // Enviando o valor da nova input
+    if (!senhaValida) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML = "A senha não atende aos requisitos.";
+      return false;
+    }
+
+    if (senhaVar != confirmacaoSenhaVar) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML = "A confirmação da senha está diferente.";
+      return false;
+    }
+
     fetch("/usuarios/cadastrar", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
         emailServer: emailVar,
         senhaServer: senhaVar,
         nomeServer: nomeVar,
@@ -173,33 +222,23 @@
       }),
     })
       .then(function (resposta) {
-        console.log("resposta: ", resposta);
-
         if (resposta.ok) {
           cardErro.style.display = "block";
-
-          mensagem_erro.innerHTML =
-            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+          mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando...";
 
           setTimeout(() => {
             window.location = "login.html";
-          }, "2000");
+          }, 2000);
 
-          limparFormulario();
-          finalizarAguardar();
         } else {
           throw "Houve um erro ao tentar realizar o cadastro!";
         }
       })
       .catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
       });
 
     return false;
   }
 
-  function sumirMensagem() {
-    cardErro.style.display = "none";
-  }
 </script>

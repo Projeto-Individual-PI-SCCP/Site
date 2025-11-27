@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 
-html {    
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
+html {
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 body {
-    margin: 0;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    height: 100%;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  height: 100%;
 }
 
 :root {
@@ -19,7 +19,7 @@ body {
   --tamanho-simulador: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
   --tamanho-login: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
   --tamanho-footer: 65px;
-  
+
   --cor-principal: #a29160;
   --cor-secundaria: #000000;
   --cor-fundo-quiz: rgba(0, 0, 0, 0.85);
@@ -71,7 +71,7 @@ body {
   color: #a29160;
 }
 
-.navbar li:hover{
+.navbar li:hover {
   transition: 200ms;
   scale: 1.05;
   font-weight: 500;
@@ -88,9 +88,9 @@ body {
 }
 
 .icon {
-display: flex;
-width: auto;
-height: 10vh;
+  display: flex;
+  width: auto;
+  height: 10vh;
 }
 
 /* BANNER */
@@ -110,15 +110,15 @@ height: 10vh;
   height: 70vh;
   width: 50vw;
   background-color: rgba(0, 0, 0, 0.85);
-	padding: 40px;
-	border-radius: 10px;
-	box-shadow: 0 0 20px rgba(162, 145, 96, 0.3); 
-	margin: 20px 20px 20px 20px;
-	color: #e0e0e0;
-	border: 2px solid #a29160;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(162, 145, 96, 0.3);
+  margin: 20px 20px 20px 20px;
+  color: #e0e0e0;
+  border: 2px solid #a29160;
 }
 
-.imgbanner{
+.imgbanner {
   display: flex;
   border-radius: 10px;
   width: 40vw;
@@ -134,15 +134,17 @@ height: 10vh;
   font-size: 36px;
 }
 
-.banner p{
+.banner p {
   width: 50vw;
-  padding: 10px, 10px, 10px,10px;
+  padding: 10px, 10px, 10px, 10px;
   font-size: 50px;
   color: #a29160;
   filter: brightness(20px);
+  text-shadow: 2px 3px 2px #000;
+
 }
 
-.frase{
+.frase {
   display: flex;
   justify-content: center;
   justify-items: center;
@@ -156,7 +158,7 @@ height: 10vh;
 }
 
 /* MISSÃO VISÃO VALORES */
-.boxx{
+.boxx {
   display: flex;
   justify-content: center;
 }
@@ -165,7 +167,7 @@ height: 10vh;
 .social {
   background-color: rgba(0, 0, 0, 0.85);
   display: flex;
-  box-shadow: 0 0 20px rgba(162, 145, 96, 0.3); 
+  box-shadow: 0 0 20px rgba(162, 145, 96, 0.3);
   justify-content: center;
   border-radius: 10px;
   border: solid;
@@ -291,13 +293,13 @@ height: 10vh;
   padding: 5px 0;
 }
 
-.campo select{
-   border: 2px solid #a29160;
+.campo select {
+  border: 2px solid #a29160;
   background-color: rgba(0, 0, 0, 0.85);
   color: #e0e0e0;
   text-align: center;
   border-radius: 10px;
-  margin: 0; 
+  margin: 0;
 }
 
 .botao {
@@ -349,66 +351,66 @@ input {
 /* HISTORIA */
 
 .divhistoria {
-	padding: 60px 0;
-	min-height: calc(100vh - var(--tamanho-header) - var(--tamanho-footer));
+  padding: 60px 0;
+  min-height: calc(100vh - var(--tamanho-header) - var(--tamanho-footer));
 }
 
 .divhistoria .container {
-	flex-direction: column;
-	height: auto; 
-	width: 90%; 
+  flex-direction: column;
+  height: auto;
+  width: 90%;
 }
 
 .historia {
-	background-color: rgba(0, 0, 0, 0.85);
-	padding: 40px;
-	border-radius: 10px;
-	box-shadow: 0 0 20px rgba(162, 145, 96, 0.3);
-	max-width: 1000px; 
-	margin: 0 auto;
-	color: #e0e0e0;
-	border: 2px solid #a29160;
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(162, 145, 96, 0.3);
+  max-width: 1000px;
+  margin: 0 auto;
+  color: #e0e0e0;
+  border: 2px solid #a29160;
 }
 
 .historia h1 {
-	color: #a29160;
-	text-align: center;
-	font-size: 2.5em;
-	font-weight: 700;
-	margin-bottom: 30px;
-	padding-bottom: 15px;
-	text-transform: uppercase;
-	border-bottom: 3px solid #a29160;
+  color: #a29160;
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: 700;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  text-transform: uppercase;
+  border-bottom: 3px solid #a29160;
 }
 
 .historia h2 {
-	color: #fff;
-	font-size: 1.8em;
-	font-weight: 600;
-	margin-top: 40px;
-	margin-bottom: 15px;
+  color: #fff;
+  font-size: 1.8em;
+  font-weight: 600;
+  margin-top: 40px;
+  margin-bottom: 15px;
 }
 
 .historia h3 {
-	color: #a29160;
-	font-size: 1.4em;
-	font-weight: 500;
-	margin-top: 30px;
-	margin-bottom: 15px;
+  color: #a29160;
+  font-size: 1.4em;
+  font-weight: 500;
+  margin-top: 30px;
+  margin-bottom: 15px;
 }
 
 .historia p {
-	color: #e0e0e0; 
-	line-height: 1.7;
-	margin-bottom: 20px;
-	text-align: justify;
-	font-size: 1.05em;
+  color: #e0e0e0;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  text-align: justify;
+  font-size: 1.05em;
 }
 
 .historia p strong,
 .historia ul li strong {
-	color: #a29160;
-	font-weight: 700;
+  color: #a29160;
+  font-weight: 700;
 }
 
 /* SALA DE TROUFEUS */
@@ -419,8 +421,8 @@ input {
 
 .divtrofeus .container {
   flex-direction: column;
-  height: auto; 
-  width: 90%; 
+  height: auto;
+  width: 90%;
 }
 
 .trofeus-container {
@@ -428,13 +430,13 @@ input {
   padding: 40px;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(162, 145, 96, 0.3);
-  max-width: 1200px; 
+  max-width: 1200px;
   margin: 0 auto;
   color: #e0e0e0;
   border: 2px solid #a29160;
   display: flex;
-  flex-direction: column; 
-  gap: 40px; 
+  flex-direction: column;
+  gap: 40px;
 }
 
 .trofeus-linha {
@@ -448,15 +450,15 @@ input {
   margin-bottom: 25px;
   border-bottom: 1px solid rgba(162, 145, 96, 0.5);
   padding-bottom: 10px;
-  font-size: 1.8em; 
+  font-size: 1.8em;
 }
 
 .trofeus-linha .cards-wrapper {
-    display: flex;
-    flex-direction: row; 
-    flex-wrap: wrap; 
-    justify-content: center;
-    gap: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
 .trofeus-linha .card {
@@ -472,7 +474,7 @@ input {
   flex-direction: column;
   height: 400px;
   padding: 20px;
-  width: 250px; 
+  width: 250px;
 }
 
 .trofeus-linha .card p,
@@ -480,10 +482,10 @@ input {
   text-align: center;
 }
 
-.trofeus-linha .card img{
-  height: 20vh; 
-  width: auto; 
-  max-width: 100%; 
+.trofeus-linha .card img {
+  height: 20vh;
+  width: auto;
+  max-width: 100%;
 }
 
 
@@ -496,7 +498,7 @@ input {
   padding: 40px 20px;
   min-height: calc(100vh - var(--tamanho-header));
   gap: 20px;
-  color: var(--cor-texto-claro); 
+  color: var(--cor-texto-claro);
 }
 
 #btnIniciarQuiz {
@@ -537,6 +539,13 @@ input {
   color: var(--cor-principal);
 }
 
+.radio:checked + .option {
+background-color: var(--cor-principal);
+color: var(--cor-secundaria); 
+border-color: var(--cor-secundaria); 
+font-weight: 700; 
+}
+
 .flex-colunar {
   display: flex;
   flex-direction: column;
@@ -547,7 +556,8 @@ input {
   width: fit-content;
 }
 
-.border-primary, .border-secondary {
+.border-primary,
+.border-secondary {
   border: 2px solid var(--cor-principal);
 }
 
@@ -565,14 +575,14 @@ input {
 }
 
 .option {
-  display: block; 
+  display: block;
   padding: 12px;
   margin: 5px 0;
   border: 1px solid var(--cor-principal);
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
-  background-color: rgba(255, 255, 255, 0.05); 
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .option:hover {
@@ -598,9 +608,9 @@ input {
 }
 
 .text-success-with-bg {
-    background-color: var(--cor-principal) !important;
-    color: var(--cor-secundaria) !important;
-    border: 1px solid var(--cor-secundaria) !important;
+  background-color: var(--cor-principal) !important;
+  color: var(--cor-secundaria) !important;
+  border: 1px solid var(--cor-secundaria) !important;
 }
 
 .text-warning-with-bg {
@@ -617,7 +627,7 @@ input {
 
 .text-new-gray {
   color: var(--new-gray);
-  border-color: var(--new-gray) !important; 
+  border-color: var(--new-gray) !important;
 }
 
 
@@ -661,11 +671,25 @@ input {
 }
 
 @keyframes bell {
-  0%   {transform: rotate(25deg)}
-  25%  {transform: rotate(-25deg)}
-  50%  {transform: rotate(25deg)}
-  75%  {transform: rotate(-25deg)}
-  100% {transform: rotate(25deg)}
+  0% {
+    transform: rotate(25deg)
+  }
+
+  25% {
+    transform: rotate(-25deg)
+  }
+
+  50% {
+    transform: rotate(25deg)
+  }
+
+  75% {
+    transform: rotate(-25deg)
+  }
+
+  100% {
+    transform: rotate(25deg)
+  }
 }
 
 /* DASHBOARD */
@@ -769,9 +793,10 @@ input {
   flex-wrap: nowrap;
 }
 
-.grafico h2{
+.dash h2 {
   text-align: center;
   text-shadow: 2px 3px 2px #000;
+  color: white;
 }
 
 .graph {
@@ -784,6 +809,23 @@ input {
 .tituloGraficos {
   color: rgb(216, 216, 216);
   display: flex;
+  justify-content: center;
+}
+
+.kpiBox {
+  background: #000000aa;
+  color: white;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.kpis {
+  display:flex; 
+  gap:20px;
   justify-content: center;
 }
 
@@ -897,7 +939,7 @@ canvas {
   width: 7vw;
   color: white;
   background-color: rgba(0, 0, 0, 0.508);
-  border: solid 2px ;
+  border: solid 2px;
   border-color: #a29160;
   border-radius: 5px;
   text-align: center;

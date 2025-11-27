@@ -17,11 +17,9 @@ var app = express();
 
 var indexRouter = require("./src/routes/index");
 var usuarioRouter = require("./src/routes/usuarios");
-var avisosRouter = require("./src/routes/avisos");
-var medidaRouter = require("./src/routes/medida");
-var aquariosRouter = require("./src/routes/aquarios");
 var quizRouter = require("./src/routes/quiz")
 var jogadorRouter = require("./src/routes/jogador")
+var quizkpiRouter = require("./src/routes/kpiquiz")
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -31,11 +29,9 @@ app.use(cors());
 
 app.use("/", indexRouter);
 app.use("/usuarios", usuarioRouter);
-app.use("/avisos", avisosRouter);
-app.use("/medida", medidaRouter);
-app.use("/aquarios", aquariosRouter);
 app.use("/quiz", quizRouter);
 app.use("/jogador", jogadorRouter);
+app.use("/kpiquiz", quizkpiRouter);
 
 app.listen(PORTA_APP, function () {
     console.log(`
