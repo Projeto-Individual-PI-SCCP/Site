@@ -705,91 +705,6 @@ input {
   overflow: auto;
 }
 
-.area-parametros-alerta {
-  /* border: 2px solid pink; */
-  display: flex;
-  flex-direction: column;
-  width: 70%;
-  margin: auto;
-  margin-top: 10px;
-  background-color: #212124;
-}
-
-.area-parametros-alerta .titulo-legenda {
-  color: white;
-  font-weight: 600;
-  width: fit-content;
-  margin: 10px 20px;
-}
-
-.parametros-alerta {
-  display: flex;
-  width: 100%;
-}
-
-.item-regua {
-  width: 20%;
-  text-align: center;
-  height: 80px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-self: center;
-}
-
-.item-regua p {
-  margin: 0;
-  font-weight: 500;
-}
-
-.item-regua p:nth-child(2) {
-  font-weight: 800;
-}
-
-.perigo-frio {
-  background-color: #5c6bc0;
-}
-
-.perigo-quente {
-  background-color: #ff7043;
-}
-
-.alerta-frio {
-  background-color: #42a5f5;
-}
-
-.alerta-quente {
-  background-color: #ffee58;
-}
-
-.ideal {
-  background-color: #9ccc65;
-}
-
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  height: 450px;
-  width: 100%;
-  align-items: center;
-  color: white;
-}
-
-.card-aquario {
-  margin: 2%;
-  min-width: 40%;
-  max-width: 50%;
-  width: fit-content;
-  flex-wrap: wrap;
-  display: flex;
-  /* text-align: center; */
-  height: 180px;
-  /* justify-content: right; */
-  background-color: #212124;
-  font-size: 20px;
-}
-
 .card-aquario h1 {
   width: fit-content;
 }
@@ -848,10 +763,22 @@ input {
   padding: 0 30% 0 30%;
 }
 
+.grafico {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.grafico h2{
+  text-align: center;
+  text-shadow: 2px 3px 2px #000;
+}
+
 .graph {
-  width: 70%;
+  width: 30vw;
   margin: auto;
   padding-top: 10px;
+  flex-direction: row;
 }
 
 .tituloGraficos {
@@ -904,6 +831,7 @@ canvas {
   width: 100% !important;
   height: 100% !important;
 }
+
 
 /* PAGINA DOS GRÁFICOS 2023 */
 
@@ -966,7 +894,7 @@ canvas {
 }
 
 .btn-nav {
-  width: 40%;
+  width: 7vw;
   color: white;
   background-color: rgba(0, 0, 0, 0.508);
   border: solid 2px ;
